@@ -41,10 +41,11 @@
   echo $br;
   echo $br;
 
-  $cars = array("Volvo","BMW","Toyota");
-var_dump($cars);
-echo $br;
-echo gettype($cars);
+  $world = "Hello world!";
+  echo $world;
+  echo $br;
+  $world = null;
+  var_dump($world);
 ?>
 
 </body>
