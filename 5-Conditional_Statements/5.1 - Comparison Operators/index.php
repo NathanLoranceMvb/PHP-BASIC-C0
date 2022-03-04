@@ -27,6 +27,8 @@
     
     echo $br;
     var_dump($test1 <= $test2);
+
+     //<=> spaceship    
 ?>
 
 </body>
