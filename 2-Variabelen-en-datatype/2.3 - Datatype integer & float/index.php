@@ -5,7 +5,7 @@
 <?php
 $leeftijd = 19;
 echo $leeftijd;
-$melkprijs = "€ 1,15";
+$melkprijs = 1,15;
 echo $melkprijs;
 ?>
 
