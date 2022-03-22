@@ -4,10 +4,11 @@
 
 <?php
     $getal1 = 21;
-    echo --$getal1;
+    echo "de uitkomst van ++ is " . ++$getal1;
    
-    $br="<br>"; echo $br;
-    echo --$getal1;
+    echo "<br><br>";
+
+    echo "de uitkomst van -- is " . --$getal1;
 
 ?>
 

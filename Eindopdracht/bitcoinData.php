@@ -1,23 +1,28 @@
 
 <?php
-/* Er zijn vier opdrachten te doen voor jou
- *
- * 1. Voeg bitcoinData.php toe aan het bestand index.php (de bestanden header.php footer.php, en de JS bestanden worden al toegevoegd)
- * 2. Maak een array met verschillende waardes. 
- *      Deze array noem je $buttons. Op de index pagina wordt van deze array gebruik gemaakt om knoppen met euro-prijzen te genereren.
- *      De array bevat 3 verschillende waardes: 2 integers en 1 float getal.
- *      Deze waardes mag je zelf kiezen, wees zo uniek mogelijk.
- * 3. De functie calculateBitcoinAmount() is niet afgemaakt. Deze functie rekent uit hoeveel bitcoins er worden gekocht als er op 1 van de knoppen geklikt wordt. 
- *     Zie regel 36 van dit bestand
- * 4. Voeg de drie benodigde waardes toe aan de $transactions array met array_push() zodat de nieuwe gekochte stukje bitcoin wordt toegevoegd 
- */
-
-/*******************************************************************************************************************/
-/******************************************* OPDRACHT 2 doe je hieronder *******************************************/
-
 /* 
- * Opdracht 2: Zet hier de $buttons array neer 
+
+Er zijn vier opdrachten in deze opdracht:
+
+ 1. Roep bitcoinData.php aan in index.php
+ 
+ 2. Maak op regel 24 van bitcoinData.php een array $buttons aan met verschillende waardes       Index.php gebruikt deze array om op het scherm extra knoppen met euro-prijzen te genereren.
+       Vul de array met 3 getallen, 2 integers en 1 float getal.
+	   De integers zijn je geboortedag en geboortemaand. Het floatgetal is je geboortejaar gedeeld door 100.
+ 
+ 3. De functie calculateBitcoinAmount() in bitcoinData.php is niet afgemaakt. Deze functie rekent uit hoeveel bitcoins er worden gekocht als er op 1 van de knoppen met euro-prijzen geklikt wordt. 
+       Schrijf in de functie de ontbrekende regel code, die de uitgerekende hoeveelheid bitcoins retour geeft.
+ 
+ 4. Voeg de drie benodigde waardes toe aan de $transactions array met array_push() zodat het de nieuw gekochte bitcoin wordt toegevoegd 
+ 
  */
+
+
+ 
+ /* 
+ * OPDRACHT 2: Zet hier de $buttons array neer 
+ */
+$buttons = [400, 500, 600, 700, 800, 900];
 
 
 /******************************************* OPDRACHT 2 doe je hierboven *******************************************/
@@ -25,24 +30,12 @@
 
 
 
-/*******************************************************************************************************************/
-/******************************************* OPDRACHT 3 doe je hieronder *******************************************/
-/* 
- * Maak met behulp van de functie getBitcoinPrice() een berekening. 
- * De uitkomst van de berekening moet het aantal gekochte bitcoins opleveren.
- * De functie geeft de uitkomst van die berekening terug.
- * De gebruiker kan voor een vast bedrag bitcoins kopen. 
- */
-
 function calculateBitcoinAmount()
 {
     if (isset($_GET['euro'])) {
         $euro = (int)$_GET['euro']; //Dit blokje code (if-statement) kun je laten staan.
     }
-
-    //SCHRIJF JE CODE.
-
-
+    return $euro / getBitcoinPrice();
 
 }
 /******************************************* OPDRACHT 3 doe je hierboven *******************************************/
@@ -74,11 +67,12 @@ $transactions = [
 if (isset($_GET['euro'])) {
 
     $euro = $_GET['euro']; //deze regel laten staan
-
+    
     /* SCHRIJF HIER JE CODE.
      * Schrijf hieronder de code om de gekochte bitcoin aan de array $transactions toe te voegen.
      * Je voegt een bitcoinprijs toe, de prijs in euro's en het aantal gekochte bitcoins.
      */
+    array_push($transactions, [getBitcoinPrice(),$euro,calculateBitcoinAmount()]);
 }
 
 
@@ -145,3 +139,4 @@ function getBitcoinData()
 
 /************************* De functies hierboven heb je nodig en hoef je niet aan te passen ************************/
 /*******************************************************************************************************************/
+?>
